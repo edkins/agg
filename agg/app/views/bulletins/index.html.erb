@@ -1,0 +1,32 @@
+<h1>Listing bulletins</h1>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Text</th>
+  </tr>
+  <% @bulletins.each do |bulletin| %>
+    <tr>
+      <td><%= bulletin.date %></td>
+      <td><%= bulletin.text %></td>
+      <td>
+        <%= link_to 'Destroy', bulletin_path(bulletin),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<h1>New bulletin</h1>
+<%= form_for :bulletin, url: bulletins_path do |f| %>
+  <p>
+    <%= f.label :text %><br>
+    <%= f.text_field :text %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
