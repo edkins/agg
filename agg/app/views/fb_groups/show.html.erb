@@ -1,0 +1,25 @@
+<h1>Listing <%= @fb_group.name %> Facebook Threads</h1>
+
+<%= form_tag(fb_group_path(@fb_group), method: "patch") do %>
+  <%= label_tag(:fb_access_token, "FB access token") %>
+  <%= text_field_tag(:fb_access_token) %>
+  <%= submit_tag("Check latest postings") %>
+<% end %>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Text</th>
+  </tr>
+  <% @fb_group.fb_threads.each do |fb_thread| %>
+    <tr>
+      <td><%= fb_thread.fb_group.id %></td>
+      <td><%= fb_thread.text %></td>
+      <td>
+        <%= link_to 'Remove', fb_thread_path(fb_thread),
+        method: :delete %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+

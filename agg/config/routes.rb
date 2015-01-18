@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :bulletins
+  resources :bulletins, :fb_groups, :fb_threads
+  resources :websites do
+    resources :feeds
+  end
   root 'browser#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

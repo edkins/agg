@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fb_node_id: MyString
+  fb_user_id: MyString
+  text: MyText
+  date: 2015-01-18
+  like_count: 1
+  fb_group_id: 
+
+two:
+  fb_node_id: MyString
+  fb_user_id: MyString
+  text: MyText
+  date: 2015-01-18
+  like_count: 1
+  fb_group_id: 

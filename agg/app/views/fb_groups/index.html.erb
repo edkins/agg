@@ -1,0 +1,48 @@
+<h1>Listing Facebook Groups</h1>
+
+<table>
+  <tr>
+    <th>Handle</th>
+    <th>Name</th>
+    <th>node_id</th>
+  </tr>
+  <% @fb_groups.each do |fb_group| %>
+    <tr>
+      <td><%= fb_group.fb_group_handle %></td>
+      <td><%= fb_group.name %></td>
+      <td><%= fb_group.fb_node_id %></td>
+      <td>
+        <%= link_to 'View', fb_group_path(id: fb_group.fb_group_handle),
+        method: :get %>
+      </td>
+      <td>
+        <%= link_to 'Unlink', fb_group_path(id: fb_group.fb_group_handle),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<h1>New Facebook Group</h1>
+<%= form_for :fb_group, url: fb_groups_path do |f| %>
+  <p>
+    <%= f.label :fb_node_id %><br>
+    <%= f.text_field :fb_node_id %>
+  </p>
+
+  <p>
+    <%= f.label :fb_group_handle %><br>
+    <%= f.text_field :fb_group_handle %>
+  </p>
+
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+

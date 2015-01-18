@@ -1,0 +1,57 @@
+<h1>Listing websites</h1>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>URL</th>
+  </tr>
+  <% @websites.each do |website| %>
+    <tr>
+      <td><%= website.websiteid %></td>
+      <td><%= website.name %></td>
+      <td><%= website.url %></td>
+      <td>
+        <%= link_to 'Destroy', website_path(website),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %>
+      </td>
+    </tr>
+    <% website.feeds.each do |feed| %>
+      <tr>
+        <td><%= feed.feedid %></td>
+        <td><%= feed.feedname %></td>
+      </tr>
+    <% end %>
+    <tr>
+      <td>
+        <%= link_to 'Create feed', website_feeds_path(website),
+        method: :create
+        %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<h1>New website</h1>
+<%= form_for :website, url: websites_path do |f| %>
+  <p>
+    <%= f.label :websiteid %><br>
+    <%= f.text_field :websiteid %>
+  </p>
+
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :url %><br>
+    <%= f.text_field :url %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
