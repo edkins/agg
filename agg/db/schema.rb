@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150118184312) do
+ActiveRecord::Schema.define(version: 20150125195648) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "username"
@@ -42,26 +42,43 @@ ActiveRecord::Schema.define(version: 20150118184312) do
 
   add_index "comments", ["article_id"], name: "index_comments_on_article_id"
 
+  create_table "fb_comments", force: :cascade do |t|
+    t.string   "fb_nodeid"
+    t.integer  "fb_user_id"
+    t.text     "text"
+    t.datetime "date"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "fb_threads_id"
+    t.integer  "like_count"
+    t.integer  "fb_thread_id"
+  end
+
+  add_index "fb_comments", ["fb_thread_id"], name: "index_fb_comments_on_fb_thread_id"
+  add_index "fb_comments", ["fb_threads_id"], name: "index_fb_comments_on_fb_threads_id"
+  add_index "fb_comments", ["fb_user_id"], name: "index_fb_comments_on_fb_user_id"
+
   create_table "fb_groups", force: :cascade do |t|
     t.text     "fb_node_id"
-    t.text     "fb_group_handle"
     t.string   "name"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "group_handle"
   end
 
   create_table "fb_threads", force: :cascade do |t|
     t.string   "fb_node_id"
-    t.string   "fb_user_id"
     t.text     "text"
     t.date     "date"
     t.integer  "like_count"
     t.integer  "fb_group_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "fb_user_id"
   end
 
   add_index "fb_threads", ["fb_group_id"], name: "index_fb_threads_on_fb_group_id"
+  add_index "fb_threads", ["fb_user_id"], name: "index_fb_threads_on_fb_user_id"
 
   create_table "fb_users", force: :cascade do |t|
     t.string   "fb_node_id"

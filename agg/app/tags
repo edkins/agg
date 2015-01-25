@@ -1,0 +1,48 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ApplicationController	controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c
+ApplicationHelper	helpers/application_helper.rb	/^module ApplicationHelper$/;"	m
+Article	models/article.rb	/^class Article < ActiveRecord::Base$/;"	c
+Bulletin	models/bulletin.rb	/^class Bulletin < ActiveRecord::Base$/;"	c
+BulletinsController	controllers/bulletins_controller.rb	/^class BulletinsController < ApplicationController$/;"	c
+BulletinsHelper	helpers/bulletins_helper.rb	/^module BulletinsHelper$/;"	m
+Comment	models/comment.rb	/^class Comment < ActiveRecord::Base$/;"	c
+FbGroup	models/fb_group.rb	/^class FbGroup < ActiveRecord::Base$/;"	c
+FbGroupsController	controllers/fb_groups_controller.rb	/^class FbGroupsController < ApplicationController$/;"	c
+FbGroupsHelper	helpers/fb_groups_helper.rb	/^module FbGroupsHelper$/;"	m
+FbThread	models/fb_thread.rb	/^class FbThread < ActiveRecord::Base$/;"	c
+FbThreadsController	controllers/fb_threads_controller.rb	/^class FbThreadsController < ApplicationController$/;"	c
+FbThreadsHelper	helpers/fb_threads_helper.rb	/^module FbThreadsHelper$/;"	m
+FbUser	models/fb_user.rb	/^class FbUser < ActiveRecord::Base$/;"	c
+FbUsersController	controllers/fb_users_controller.rb	/^class FbUsersController < ApplicationController$/;"	c
+FbUsersHelper	helpers/fb_users_helper.rb	/^module FbUsersHelper$/;"	m
+Feed	models/feed.rb	/^class Feed < ActiveRecord::Base$/;"	c
+FeedsController	controllers/feeds_controller.rb	/^class FeedsController < ApplicationController$/;"	c
+FeedsHelper	helpers/feeds_helper.rb	/^module FeedsHelper$/;"	m
+Person	models/person.rb	/^class Person < ActiveRecord::Base$/;"	c
+Username	models/username.rb	/^class Username < ActiveRecord::Base$/;"	c
+Website	models/website.rb	/^class Website < ActiveRecord::Base$/;"	c
+WebsitesController	controllers/websites_controller.rb	/^class WebsitesController < ApplicationController$/;"	c
+WebsitesHelper	helpers/websites_helper.rb	/^module WebsitesHelper$/;"	m
+create	controllers/bulletins_controller.rb	/^  def create$/;"	f	class:BulletinsController
+create	controllers/fb_groups_controller.rb	/^  def create$/;"	f	class:FbGroupsController
+create	controllers/websites_controller.rb	/^  def create$/;"	f	class:WebsitesController
+destroy	controllers/bulletins_controller.rb	/^  def destroy$/;"	f	class:BulletinsController
+destroy	controllers/fb_groups_controller.rb	/^  def destroy$/;"	f	class:FbGroupsController
+destroy	controllers/fb_threads_controller.rb	/^  def destroy$/;"	f	class:FbThreadsController
+destroy	controllers/websites_controller.rb	/^  def destroy$/;"	f	class:WebsitesController
+index	controllers/bulletins_controller.rb	/^  def index$/;"	f	class:BulletinsController
+index	controllers/fb_groups_controller.rb	/^  def index$/;"	f	class:FbGroupsController
+index	controllers/fb_users_controller.rb	/^  def index$/;"	f	class:FbUsersController
+index	controllers/websites_controller.rb	/^  def index$/;"	f	class:WebsitesController
+show	controllers/fb_groups_controller.rb	/^  def show$/;"	f	class:FbGroupsController
+show	controllers/websites_controller.rb	/^  def show$/;"	f	class:WebsitesController
+update	controllers/fb_groups_controller.rb	/^  def update$/;"	f	class:FbGroupsController
+update_from_facebook	models/fb_group.rb	/^  def update_from_facebook(fb_access_token)$/;"	f	class:FbGroup
+update_from_obj	models/fb_thread.rb	/^  def self.update_from_obj(obj, fb_group_id)$/;"	F	class:FbThread
+update_from_obj	models/fb_user.rb	/^  def self.update_from_obj(obj)$/;"	F	class:FbUser
+update_record	models/fb_thread.rb	/^  def self.update_record(par)$/;"	F	class:FbThread

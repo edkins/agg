@@ -1,0 +1,18 @@
+<%= render "shared/navigation" %>
+
+<h1>Listing known facebook users</h1>
+
+<table>
+  <tr>
+    <th>Node id</th>
+    <th>Name</th>
+    <th>Person</th>
+  </tr>
+  <% @fb_users.each do |fb_user| %>
+    <tr>
+      <td><%= fb_user.fb_node_id %></td>
+      <td><%= fb_user.name %></td>
+      <td><%= fb_user.person %></td>
+    </tr>
+  <% end %>
+</table>

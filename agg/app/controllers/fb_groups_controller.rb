@@ -18,25 +18,8 @@ class FbGroupsController < ApplicationController
 
   def update
     @fb_group = FbGroup.find(params[:id])
-    fb_access_token = params[:fb_access_token]
-    fb_group_id = @fb_group.fb_node_id
-    open("https://graph.facebook.com/#{fb_group_id}/feed?access_token=#{fb_access_token}") { |f|
-      json = f.read
-      obj = JSON.parse(json)
-      obj["data"].each {|thread|}
-      thread = obj["data"][0]
-        fb_thread_id = thread["id"]
-        fb_user_id = thread["from"]["id"]
-        text = thread["message"]
-        date = thread["created_time"]
-        @fb_group.fb_threads.create(
-          fb_node_id: fb_thread_id,
-          fb_user_id: fb_user_id,
-          text: text,
-          date: date
-          );
-    }
-    redirect_to fb_group_path(@fb_group)
+    @fb_group.update_from_facebook(params[:fb_access_token])
+    redirect_to fb_group_path(id: @fb_group.group_handle)
   end
 
   def destroy

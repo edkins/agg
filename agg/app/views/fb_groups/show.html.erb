@@ -1,3 +1,5 @@
+<%= render "shared/navigation" %>
+
 <h1>Listing <%= @fb_group.name %> Facebook Threads</h1>
 
 <%= form_tag(fb_group_path(@fb_group), method: "patch") do %>
@@ -8,18 +10,11 @@
 
 <table>
   <tr>
-    <th>ID</th>
+    <th>Author</th>
     <th>Text</th>
   </tr>
   <% @fb_group.fb_threads.each do |fb_thread| %>
-    <tr>
-      <td><%= fb_thread.fb_group.id %></td>
-      <td><%= fb_thread.text %></td>
-      <td>
-        <%= link_to 'Remove', fb_thread_path(fb_thread),
-        method: :delete %>
-      </td>
-    </tr>
+  <%= render partial: "fb_threads/row", object: fb_thread %>
   <% end %>
 </table>
 

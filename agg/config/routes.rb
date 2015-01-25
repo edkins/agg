@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :bulletins, :fb_groups, :fb_threads
+  resources :bulletins, :fb_groups, :fb_threads, :fb_users, :fb_comments
   resources :websites do
     resources :feeds
   end

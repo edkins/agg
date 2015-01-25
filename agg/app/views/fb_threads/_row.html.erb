@@ -1,0 +1,19 @@
+<tr>
+  <td><%= row.user_name %></td>
+  <td><%= row.text %></td>
+  <td>
+    <%= link_to 'Remove', fb_thread_path(row),
+    method: :delete %>
+  </td>
+</tr>
+<% row.fb_comments.each do |fb_comment| %>
+  <tr>
+    <td><%= fb_comment.user_name %></td>
+    <td><%= fb_comment.text %></td>
+    <td>
+      <%= link_to 'Remove', fb_comment_path(fb_comment),
+      method: :delete %>
+    </td>
+  </tr>
+<% end %>
+

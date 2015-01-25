@@ -1,3 +1,5 @@
+<%= render "shared/navigation" %>
+
 <h1>Listing Facebook Groups</h1>
 
 <table>
@@ -8,15 +10,15 @@
   </tr>
   <% @fb_groups.each do |fb_group| %>
     <tr>
-      <td><%= fb_group.fb_group_handle %></td>
+      <td><%= fb_group.group_handle %></td>
       <td><%= fb_group.name %></td>
       <td><%= fb_group.fb_node_id %></td>
       <td>
-        <%= link_to 'View', fb_group_path(id: fb_group.fb_group_handle),
+        <%= link_to 'View', fb_group_path(id: fb_group.group_handle),
         method: :get %>
       </td>
       <td>
-        <%= link_to 'Unlink', fb_group_path(id: fb_group.fb_group_handle),
+        <%= link_to 'Unlink', fb_group_path(id: fb_group.group_handle),
         method: :delete,
         data: { confirm: 'Are you sure?' } %>
       </td>
@@ -32,8 +34,8 @@
   </p>
 
   <p>
-    <%= f.label :fb_group_handle %><br>
-    <%= f.text_field :fb_group_handle %>
+    <%= f.label :group_handle %><br>
+    <%= f.text_field :group_handle %>
   </p>
 
   <p>

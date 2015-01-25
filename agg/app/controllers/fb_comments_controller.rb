@@ -1,0 +1,2 @@
+class FbCommentsController < ApplicationController
+end
